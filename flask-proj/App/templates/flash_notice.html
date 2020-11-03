@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接收返回的flash数据</title>
+</head>
+<body>
+<!-- 显示后台保存的登录失败的消息 -->
+{% for msg in get_flashed_messages() %}
+    <span>{{ msg }}</span>
+{% endfor %}
+<!-- 提交登录请求的表单 -->
+<form action="{{ url_for('fBlue.show_flash') }}" method="POST">
+    <button type="submit">登录</button>
+</form>
+</body>
+</html>
